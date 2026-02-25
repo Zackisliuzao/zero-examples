@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/nacos-group/nacos-sdk-go/common/constant"
+	"github.com/nacos-group/nacos-sdk-go/v2/common/constant"
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/zrpc"
 	"github.com/zeromicro/zero-contrib/zrpc/registry/nacos"
@@ -74,13 +74,11 @@ func main() {
 		NotLoadCacheAtStart: true,
 		LogDir:              "/tmp/nacos/log",
 		CacheDir:            "/tmp/nacos/cache",
-		RotateTime:          "1h",
-		MaxAge:              3,
 		LogLevel:            "debug",
 	}
 
 	opts := nacos.NewNacosConfig("nacos.rpc", c.ListenOn, sc, cc)
-	_ = nacos.RegitserService(opts)
+	_ = nacos.RegisterService(opts)
 
 	server.Start()
 }

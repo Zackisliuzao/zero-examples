@@ -12,8 +12,9 @@ import (
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/zrpc"
 
+	"consul/server/internal/config"
+
 	"github.com/zeromicro/zero-contrib/zrpc/registry/consul"
-	"github.com/zeromicro/zero-examples/discovery/consul/server/internal/config"
 	"github.com/zeromicro/zero-examples/rpc/remote/unary"
 	"google.golang.org/grpc"
 )
@@ -63,7 +64,7 @@ func main() {
 
 	server.AddUnaryInterceptors(interceptor)
 
-	_ = consul.RegitserService(c.ListenOn, c.Consul)
+	_ = consul.RegisterService(c.ListenOn, c.Consul)
 
 	server.Start()
 }

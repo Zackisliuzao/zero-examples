@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/dgrijalva/jwt-go"
+	"github.com/golang-jwt/jwt/v4"
 	"github.com/zeromicro/zero-examples/jwt/internal/svc"
 	"github.com/zeromicro/zero-examples/jwt/internal/types"
 

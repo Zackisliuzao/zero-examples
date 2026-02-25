@@ -64,7 +64,7 @@ func main() {
 	server.AddUnaryInterceptors(interceptor)
 
 	opts := polaris.NewPolarisConfig(c.ListenOn, polaris.WithServiceName("EchoServerZero"))
-	_ = polaris.RegitserService(opts)
+	_ = polaris.RegisterService(opts)
 
 	server.Start()
 }
